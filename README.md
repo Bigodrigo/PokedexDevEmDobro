@@ -21,5 +21,11 @@ O Site é uma lista curta com alguns pokémons, o intuito do evento é aproximar
 ## 🔖 Layout
 
 <div align="center">
-<img src="/src/assets/Saude-App.gif" width="270" height="555">
+    <p>Layout:</p>
+    <img src="./src/img/imagens/layout.png">
+</div>
+
+<div align="center">
+    <p>Layout Modo Escuro:</p>
+    <img src="./src/img/imagens/layout-escuro.png">
 </div>
