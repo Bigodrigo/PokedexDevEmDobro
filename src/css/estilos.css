@@ -11,12 +11,64 @@ body.modo-escuro {
 	color: #f5f5f5;
 }
 
-header {
+/* Style for the modal */
+.modal {
+	display: none; /* Hide the modal by default */
+	position: fixed;
+	z-index: 9999;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Style for the modal content */
+  .modal-content {
+	background-color: #fefefe;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 300px;
+  }
+  
+  /* Style for the close button */
+  .close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+  }
+
+  header {
 	display: flex;
 	justify-content: space-between;
 	padding: 25px;
 	position: sticky;
 	top: 0;
+	background-color: #5e5b5bad; /* Add a solid background color to the header */
+	z-index: 999; /* Add a high z-index to ensure the header is displayed above the content */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for visual separation */
+	border-radius: 0 0 15px 15px; /* Add rounded borders to the bottom of the header */
+}
+
+/* Add padding to the buttons in the header to create space */
+header a {
+	padding: 10px 15px;
+}
+
+/* Add some margin to separate the buttons in the header */
+header a:not(:last-child) {
+	margin-right: 10px;
 }
 
 a:link { text-decoration: none; }

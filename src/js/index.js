@@ -16,7 +16,28 @@
 
 // objetivo 1 - quando clicar no botão de troca de tema, adicionar a classe modo-escuro no body pra que os estilos do modo escuro sejam aplicados e mudar a imagem pra lua
 
-alert("Welcome to the Pokedex!"); // Display the alert message
+// alert("Welcome to the Pokedex!"); // Display the alert message
+
+  // Get the modal element
+  const modal = document.getElementById("myModal");
+
+  // Get the close button element
+  const closeBtn = document.getElementsByClassName("close")[0];
+
+  // Check if the modal has been shown before
+  const modalShown = sessionStorage.getItem("modalShown");
+  if (!modalShown) {
+    // Display the modal if it hasn't been shown before
+    modal.style.display = "block";
+
+    // Set a flag in sessionStorage to indicate that the modal has been shown
+    sessionStorage.setItem("modalShown", true);
+  }
+
+  // Close the modal when the close button is clicked
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
 
 const botaoAlterarTema = document.getElementById("botao-alterar-tema");
 const body = document.querySelector("body");
