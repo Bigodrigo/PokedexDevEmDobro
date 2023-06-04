@@ -1,22 +1,26 @@
 # Pokédex
-## (Finalizado) - 21/05/2023
-### Este projeto é baseado no evento da semana de programação desenvolvida pelo Dev Em Dobro
+## (Last Update) - 04/06/2023
+### This project derives from the Dev Em Dobro programming week event.
 
 <p align="center">
-  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-layout">Layout</a>
 </p>
 
-## 🚀 Tecnologias
+The Pokedex is currently accessible at:
+https://bigodrigo.github.io/PokedexDevEmDobro/
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+## 🚀 Technologies
+
+This project has been developed employing the following technologies:
 
 - HTML, CSS e JS
 
-## 💻 Projeto
+## 💻 Project
 
-O Site é uma lista curta com alguns pokémons, o intuito do evento é aproximar pessoas para a área de programação. Aproveitei para relembrar o básico de HTML/CSS/JS. Acredito que seria interessante retornar e adicionar por API mais pokémons.
+This website features a concise selection of Pokémon with the aim of enhancing engagement with the coding environment. In the process, I refreshed my knowledge on the fundamentals of HTML/CSS/JS. 
+Using fetch, I developed two detailed pages containing information on the first 251 Pokémon, classified by the Kanto and Jhoto regions. Future enhancements will prioritize site performance, which currently needs improvement to minimize rendering time.
 
 ## 🔖 Layout
 
@@ -26,6 +30,6 @@ O Site é uma lista curta com alguns pokémons, o intuito do evento é aproximar
 </div>
 
 <div align="center">
-    <p>Layout Modo Escuro:</p>
+    <p>Layout Dark Mode:</p>
     <img src="./src/img/imagens/layout-escuro.png">
 </div>
