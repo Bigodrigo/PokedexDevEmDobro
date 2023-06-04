@@ -16,6 +16,8 @@
 
 // objetivo 1 - quando clicar no botão de troca de tema, adicionar a classe modo-escuro no body pra que os estilos do modo escuro sejam aplicados e mudar a imagem pra lua
 
+alert("Welcome to the Pokedex!"); // Display the alert message
+
 const botaoAlterarTema = document.getElementById("botao-alterar-tema");
 const body = document.querySelector("body");
 const imagemBotaoTrocaDeTema = document.querySelector(".imagem-botao");

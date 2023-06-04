@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/scrollbar.css">
+</head>
+<body>
+
+    <header>
+        <div>
+            <a href="../../index.html">
+                <img src="../img/imagens/pokeball2.png" alt="pokeball" class="logo">
+            </a>
+            <a href="./kanto.html">
+                <img src="../img/imagens/premier.png" alt="pokeball" class="logo">
+            </a>
+            <a href="./jhoto.html">
+                <img src="../img/imagens/great.png" alt="pokeball" class="logo">
+            </a>
+        </div>
+        <button id="botao-alterar-tema">
+            <img src="../img/imagens/sun.png" alt="sol" class="imagem-botao">
+        </button>
+    </header>
+    <main>
+        <ul class="listagem-pokemon">
+            <li class="cartao-pokemon">
+                <div class="informacoes">
+                    <span>Bulbasaur</span>
+                    <span>#001</span>
+                </div>
+                <img src="../img/imagens/bulbasaur.gif" alt="Bulbasaur" class="gif">
+                <ul class="tipos">
+                    <li class="tipo grama">Grama</li>
+                    <li class="tipo veneno">Veneno</li>
+                </ul>
+                <p class="descricao">Há uma semente de planta em suas costas desde o dia que este Pókemon nasce. A semente cresce lentamente.</p>
+            </li>
+        </ul>
+    </main>
+    <script>
+        async function getPokemonData(endpointNumber) {
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${endpointNumber}`);
+            const pokemonData = await response.json();
+            return pokemonData;
+        }
+        
+        async function getPokemonSpeciesData(endpointNumber) {
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${endpointNumber}`);
+            const pokemonSpeciesData = await response.json();
+            return pokemonSpeciesData;
+        }
+        
+        async function updatePokemonCard(endpointNumber) {
+            const pokemonData = await getPokemonData(endpointNumber);
+            const pokemonSpeciesData = await getPokemonSpeciesData(endpointNumber);
+
+            const listElement = document.querySelector('.listagem-pokemon');
+
+            const card = document.createElement('li');
+            card.classList.add('cartao-pokemon');
+
+            const nameElement = document.createElement('span');
+            nameElement.textContent = pokemonData.name;
+
+            const numberElement = document.createElement('span');
+            numberElement.textContent = `#${endpointNumber.toString().padStart(3, '0')}`;
+
+            const infoElement = document.createElement('div');
+            infoElement.classList.add('informacoes');
+            infoElement.appendChild(nameElement);
+            infoElement.appendChild(numberElement);
+
+            const imageElement = document.createElement('img');
+            imageElement.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${endpointNumber}.gif`;
+            imageElement.alt = pokemonData.name;
+            imageElement.classList.add('gif');
+
+            const typesElement = document.createElement('ul');
+            typesElement.classList.add('tipos');
+
+            pokemonData.types.forEach((type) => {
+                const typeElement = document.createElement('li');
+                typeElement.classList.add('tipo');
+                typeElement.classList.add(getTypeClass(type.type.name)); // Add the type class here
+                typeElement.textContent = type.type.name;
+                typesElement.appendChild(typeElement);
+            });
+
+            const descriptionElement = document.createElement('p');
+            descriptionElement.classList.add('descricao');
+
+            pokemonSpeciesData.flavor_text_entries.some((entry) => {
+                if (entry.language.name === 'en') {
+                descriptionElement.textContent = removeBarra(entry.flavor_text);
+
+                return true;
+                }
+            });
+
+            card.appendChild(infoElement);
+            card.appendChild(imageElement);
+            card.appendChild(typesElement);
+            card.appendChild(descriptionElement);
+
+            listElement.appendChild(card);
+            }
+        
+        async function fetchPokemonData() {
+            try {
+                const listElement = document.querySelector('.listagem-pokemon');
+                listElement.innerHTML = '';
+        
+                for (let i = 152; i <= 251; i++) {
+                    await updatePokemonCard(i);
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+    
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchPokemonData();
+        });
+    </script>
+    <script src="../js/pages.js"></script>
+</body>
+</html>

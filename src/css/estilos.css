@@ -15,7 +15,20 @@ header {
 	display: flex;
 	justify-content: space-between;
 	padding: 25px;
+	position: sticky;
+	top: 0;
 }
+
+a:link { text-decoration: none; }
+
+
+a:visited { text-decoration: none; }
+
+
+a:hover { text-decoration: none; }
+
+
+a:active { text-decoration: none; }
 
 header .logo,
 header .imagem-botao {
@@ -92,7 +105,84 @@ main .cartao-pokemon .tipos {
 main .cartao-pokemon .tipo {
 	padding: 8px;
 	border-radius: 10px;
+	text-transform: capitalize;
 }
+
+/* ----- English ----- */
+
+.bug {
+	background-color: #a7ba00;
+}
+
+.dark {
+	background-color: #6f5846;
+}
+
+.dragon {
+	background-color: #6f29fd;
+}
+
+.electric {
+	background-color: #fad105;
+}
+
+.fairy {
+	background-color: #f198ac;
+}
+
+.fighting {
+	background-color: #c22e22;
+}
+
+.fire {
+	background-color: #f17f1d;
+}
+
+.flying {
+	background-color: #a88ef2;
+}
+
+.ghost {
+	background-color: #72559d;
+}
+
+.grass {
+	background-color: #74c948;
+}
+
+.ground {
+	background-color: #e2c162;
+}
+
+.ice {
+	background-color: #95d8d9;
+}
+
+.normal {
+	background-color: #a9a975;
+}
+
+.poison {
+	background-color: #a13aa3;
+}
+
+.psychic {
+	background-color: #fb5587;
+}
+
+.rock {
+	background-color: #b9a02c;
+}
+
+.steel {
+	background-color: #b8b8d0;
+}
+
+.water {
+	background-color: #678ef3;
+}
+
+/* ----- Português ----- */
 
 .grama {
 	background-color: #7ac74c;
